@@ -66,14 +66,11 @@ jobs:
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
       - checkout
-      - run:
-          name: "Attach hello world file"
-          command: echo "Hello World" > /tmp/dir/output.txt
       - attach_workspace:
           at: /tmp/dir
       - run:
           name: "Print hello world file"
-          command: cat output.txt
+          command: cat /tmp/dir/output.txt
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
