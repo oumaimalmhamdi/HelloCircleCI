@@ -96,7 +96,7 @@ jobs:
     steps:
       - run:
           name: "producing error"
-          command: return 1
+          command: exit 1
       - run:
           name: "catch error and print error msg"
           command: echo "error message"
