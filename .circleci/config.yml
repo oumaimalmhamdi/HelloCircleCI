@@ -52,9 +52,9 @@ jobs:
       - checkout
       - run:
           name: "Save hello world file"
-          command: mkdir /tmp/dir && echo "Hello World" > /tmp/dir/output.txt
+          command: echo "Hello World" > ~/output.txt
       - persist_to_workspace:
-          root: /tmp/dir
+          root: ~/
           paths:
             - output.txt
   print_output_file:
@@ -67,10 +67,10 @@ jobs:
     steps:
       - checkout
       - attach_workspace:
-          at: /tmp/dir
+          at: ~/
       - run:
           name: "Print hello world file"
-          command: cat output.txt
+          command: cat ~/output.txt
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
