@@ -70,7 +70,7 @@ jobs:
           at: /tmp/dir
       - run:
           name: "Print hello world file"
-          command: cat /tmp/dir/output.txt
+          command: cat output.txt
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
